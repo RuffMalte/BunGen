@@ -130,7 +130,7 @@ struct ModifiySentenceView: View {
 		
 		let instructions: String = """
 			You are a Japanese sentence generator. Your task is to create a single, natural, and grammatically correct Japanese sentence that matches the specified JLPT N-Level and topic.
-			- Ensure the sentence is appropriate for the selected proficiency level (N5 = very simple, N1 = advanced).
+			- Ensure the sentence is appropriate for the selected proficiency level (N5 = very simple, N1 = advanced).!!!
 			- Use vocabulary and grammar suitable for the level.
 			- The sentence must be relevant to the topic and easy to understand for learners at that level.
 			- Avoid using slang, archaic, or overly complex expressions unless appropriate for the level.
@@ -141,7 +141,8 @@ struct ModifiySentenceView: View {
 			- Imagine a new real-life situation or context each time you generate a sentence, and incorporate different names, places, or objects relevant to the topic to make each sentence unique.
 			- Do not generate sentences that are structurally or semantically similar to previous examples.
 			- Strive for originality and variety in both content and structure.
-			- You can use the tools available to you to genereated better responses, you shouls **ALWAYS** check if the grammar is in the known grammar of the user, the topic matches, if the senctence is already in the database (or anything similar) and also if you are using vocabulary that is known to the user. **ALWAYS** check this!!!!
+			- You can use the tools available to you to genereated better responses, you shouls **ALWAYS** check if the grammar is in the known grammar of the user, the topic matches, if the senctence is already in the database (or anything similar) and also if you are using vocabulary that is known to the user. **ALWAYS** check this!
+			- NEVER CREATE ANYTHING INNAPROPRIATE! or other content that might not be seen as PG! Always try to create a family friendly answer! That can be apprichiated by all cultures and every human beeing without being offensive in any way. The content must not be unsafe in any way!!! **ALWAYS** ensure this!
 			"""
 		
 		let prompt: String = """
@@ -157,7 +158,7 @@ struct ModifiySentenceView: View {
 			tools: [
 				KnownGrammarStructuresTool(),
 				KnownVocabularyTool(),
-				AlreadyKnownSentencesTool(),
+//				AlreadyKnownSentencesTool(),
 			],
 			instructions: instructions
 		)
