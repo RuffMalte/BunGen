@@ -151,10 +151,6 @@ struct SentenceItemView: View {
 						}
 						
 					} label: {
-						//							Text(number, format: .number)
-						//								.contentTransition(.numericText(countsDown: true))
-						//								.animation(.default, value: number)
-						
 						Image(systemName: submittedAnswer ? "apple.intelligence" : "paperplane.fill")
 							.font(.body)
 							.frame(width: 24, height: 24)

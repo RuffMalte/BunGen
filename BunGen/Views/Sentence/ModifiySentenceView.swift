@@ -141,6 +141,7 @@ struct ModifiySentenceView: View {
 			- Imagine a new real-life situation or context each time you generate a sentence, and incorporate different names, places, or objects relevant to the topic to make each sentence unique.
 			- Do not generate sentences that are structurally or semantically similar to previous examples.
 			- Strive for originality and variety in both content and structure.
+			- You can use the tools available to you to genereated better responses, you shouls **ALWAYS** check if the grammar is in the known grammar of the user, the topic matches, if the senctence is already in the database (or anything similar) and also if you are using vocabulary that is known to the user. **ALWAYS** check this!!!!
 			"""
 		
 		let prompt: String = """
@@ -148,13 +149,20 @@ struct ModifiySentenceView: View {
 			- JLPT Level: \(selectedDifficulty.rawValue)
 			- Vocubuarly Level: \(selectedDifficulty.rawValue)
 			- Topic: \(selectedTopic.name)
+			- Sentences JLPT-Level: \(selectedDifficulty.rawValue)
 			"""
 		
 		
 		let session = LanguageModelSession(
-			tools: [], //TODO: add tools, marumori lookup from cache, sentences that have be already created (swift data)
+			tools: [
+				KnownGrammarStructuresTool(),
+				KnownVocabularyTool(),
+				AlreadyKnownSentencesTool(),
+			],
 			instructions: instructions
 		)
+		session.prewarm()
+		
 		Task {
 			do {
 				let newSentence = try await session.respond(
@@ -168,9 +176,30 @@ struct ModifiySentenceView: View {
 					print(newSentence.japanese)
 					isAnswering = false
 				}
-			} catch(let error) {
-				print(error)
+			} catch let error as LanguageModelSession.GenerationError {
 				aiAnswerError = error.localizedDescription
+				print("generation error")
+				print(error.localizedDescription)
+				print(error.errorDescription)
+				print(error.failureReason?.description ?? "no failureReason")
+				print(error.recoverySuggestion?.description ?? 	"no recoverySuggestion")
+				print(error.helpAnchor?.description ?? "no helpAnchor")
+				
+			} catch let error as LanguageModelSession.ToolCallError {
+				aiAnswerError = error.localizedDescription
+				print("toolCallError")
+				print(error)
+				print(error.errorDescription ?? "errorDescription")
+				print(error.tool.description)
+				
+				print(error.failureReason?.description ?? "no failureReason")
+				print(error.recoverySuggestion?.description ?? 	"no recoverySuggestion")
+				print(error.helpAnchor?.description ?? "no helpAnchor")
+				
+			} catch {
+				aiAnswerError = error.localizedDescription
+				print(error.localizedDescription)
+				print("Normal error")
 			}
 			
 		}
