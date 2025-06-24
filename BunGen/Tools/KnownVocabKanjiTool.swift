@@ -78,30 +78,3 @@ struct KnownVocabKanjiTool: Tool {
 	
 	
 }
-
-
-struct MM_KownVocab: Codable {
-	var success: Bool
-	var items: [MM_KownVocabItem]
-	
-	
-	
-	struct MM_KownVocabItem: Codable {
-		var _id: String
-		var item: String
-		var level: Int
-	}
-}
-
-struct MM_KownKanji: Codable {
-	var success: Bool
-	var items: [MM_KownKanjiItem]
-	
-	
-	
-	struct MM_KownKanjiItem: Codable {
-		var _id: String
-		var item: String
-		var level: Int
-	}
-}
