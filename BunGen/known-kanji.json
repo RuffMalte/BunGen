@@ -1,0 +1,1500 @@
+{
+    "success": true,
+    "items": [
+        {
+            "_id": "Kanji/3960744",
+            "item": "士",
+            "level": 1
+        },
+        {
+            "_id": "Kanji/3963159",
+            "item": "張",
+            "level": 1
+        },
+        {
+            "_id": "Kanji/3963516",
+            "item": "転",
+            "level": 1
+        },
+        {
+            "_id": "Kanji/3964590",
+            "item": "必",
+            "level": 1
+        },
+        {
+            "_id": "Kanji/3959439",
+            "item": "具",
+            "level": 2
+        },
+        {
+            "_id": "Kanji/3960885",
+            "item": "持",
+            "level": 2
+        },
+        {
+            "_id": "Kanji/3961251",
+            "item": "住",
+            "level": 2
+        },
+        {
+            "_id": "Kanji/3962634",
+            "item": "族",
+            "level": 2
+        },
+        {
+            "_id": "Kanji/3958200",
+            "item": "果",
+            "level": 3
+        },
+        {
+            "_id": "Kanji/3958794",
+            "item": "間",
+            "level": 3
+        },
+        {
+            "_id": "Kanji/3961242",
+            "item": "集",
+            "level": 3
+        },
+        {
+            "_id": "Kanji/3965496",
+            "item": "明",
+            "level": 3
+        },
+        {
+            "_id": "Kanji/3958284",
+            "item": "画",
+            "level": 4
+        },
+        {
+            "_id": "Kanji/3961197",
+            "item": "秋",
+            "level": 4
+        },
+        {
+            "_id": "Kanji/3961392",
+            "item": "所",
+            "level": 4
+        },
+        {
+            "_id": "Kanji/3961827",
+            "item": "真",
+            "level": 4
+        },
+        {
+            "_id": "Kanji/3962874",
+            "item": "達",
+            "level": 4
+        },
+        {
+            "_id": "Kanji/3963756",
+            "item": "動",
+            "level": 4
+        },
+        {
+            "_id": "Kanji/3957630",
+            "item": "以",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3957813",
+            "item": "羽",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3957879",
+            "item": "運",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3959955",
+            "item": "午",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3960057",
+            "item": "好",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3960252",
+            "item": "号",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3960719",
+            "item": "仕",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3961425",
+            "item": "助",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3962070",
+            "item": "晴",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3962697",
+            "item": "打",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3962736",
+            "item": "待",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3963345",
+            "item": "低",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3963684",
+            "item": "当",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3965327",
+            "item": "妹",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3965769",
+            "item": "予",
+            "level": 5
+        },
+        {
+            "_id": "Kanji/3957705",
+            "item": "違",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3957765",
+            "item": "員",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3957804",
+            "item": "右",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3958566",
+            "item": "活",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3958682",
+            "item": "完",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3958959",
+            "item": "起",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3959100",
+            "item": "急",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3959535",
+            "item": "軍",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3959694",
+            "item": "決",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3960006",
+            "item": "交",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3962313",
+            "item": "船",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3962559",
+            "item": "送",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3962726",
+            "item": "対",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3963093",
+            "item": "注",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3964131",
+            "item": "馬",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3964425",
+            "item": "飯",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3964908",
+            "item": "文",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3965033",
+            "item": "歩",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3966109",
+            "item": "力",
+            "level": 6
+        },
+        {
+            "_id": "Kanji/3957543",
+            "item": "悪",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3957615",
+            "item": "暗",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3957779",
+            "item": "飲",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3957789",
+            "item": "院",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3958134",
+            "item": "俺",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3958182",
+            "item": "夏",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3958208",
+            "item": "歌",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3958368",
+            "item": "界",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3958383",
+            "item": "開",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3958809",
+            "item": "館",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3958815",
+            "item": "丸",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3958863",
+            "item": "危",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3958920",
+            "item": "帰",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3958953",
+            "item": "記",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3959186",
+            "item": "魚",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3959241",
+            "item": "強",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3959523",
+            "item": "君",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3959643",
+            "item": "計",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3959691",
+            "item": "欠",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3959886",
+            "item": "己",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3960042",
+            "item": "向",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3960177",
+            "item": "考",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3960726",
+            "item": "使",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3960773",
+            "item": "思",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3960876",
+            "item": "字",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3960888",
+            "item": "時",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3960891",
+            "item": "次",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3960918",
+            "item": "耳",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3961101",
+            "item": "主",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3961200",
+            "item": "終",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3961281",
+            "item": "重",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3961329",
+            "item": "春",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3961413",
+            "item": "書",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3961557",
+            "item": "消",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3961596",
+            "item": "笑",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3961803",
+            "item": "新",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3961848",
+            "item": "親",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3962160",
+            "item": "石",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3962556",
+            "item": "走",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3962664",
+            "item": "村",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3962670",
+            "item": "他",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3963072",
+            "item": "着",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3963224",
+            "item": "鳥",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3963234",
+            "item": "直",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3963524",
+            "item": "点",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3963597",
+            "item": "度",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3963600",
+            "item": "土",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3963696",
+            "item": "答",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3963759",
+            "item": "同",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3963942",
+            "item": "南",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3964193",
+            "item": "買",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3964317",
+            "item": "発",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3964365",
+            "item": "反",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3964656",
+            "item": "病",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3964815",
+            "item": "風",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3964836",
+            "item": "服",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3964968",
+            "item": "別",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3965409",
+            "item": "味",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3965412",
+            "item": "未",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3965583",
+            "item": "目",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3965604",
+            "item": "問",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3965634",
+            "item": "野",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3965739",
+            "item": "由",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3965838",
+            "item": "羊",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3966039",
+            "item": "旅",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3966056",
+            "item": "両",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3966351",
+            "item": "話",
+            "level": 7
+        },
+        {
+            "_id": "Kanji/3957606",
+            "item": "安",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3957711",
+            "item": "医",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3957732",
+            "item": "一",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3957774",
+            "item": "引",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3957819",
+            "item": "雨",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3957975",
+            "item": "円",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958086",
+            "item": "王",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958115",
+            "item": "屋",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958151",
+            "item": "下",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958152",
+            "item": "音",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958155",
+            "item": "化",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958161",
+            "item": "何",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958176",
+            "item": "可",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958187",
+            "item": "家",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958215",
+            "item": "火",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958232",
+            "item": "花",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958311",
+            "item": "会",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958317",
+            "item": "回",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958362",
+            "item": "海",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958391",
+            "item": "貝",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958398",
+            "item": "外",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958518",
+            "item": "学",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958524",
+            "item": "楽",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958743",
+            "item": "甘",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3958926",
+            "item": "気",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959085",
+            "item": "休",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959145",
+            "item": "牛",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959148",
+            "item": "去",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959196",
+            "item": "京",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959259",
+            "item": "教",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959328",
+            "item": "玉",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959391",
+            "item": "近",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959394",
+            "item": "金",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959403",
+            "item": "九",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959451",
+            "item": "空",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959559",
+            "item": "兄",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959577",
+            "item": "形",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959700",
+            "item": "穴",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959712",
+            "item": "月",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959772",
+            "item": "犬",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959793",
+            "item": "見",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959823",
+            "item": "元",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959856",
+            "item": "言",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959871",
+            "item": "古",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959946",
+            "item": "五",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959967",
+            "item": "後",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3959988",
+            "item": "語",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960021",
+            "item": "光",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960039",
+            "item": "口",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960069",
+            "item": "工",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960081",
+            "item": "広",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960123",
+            "item": "校",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960198",
+            "item": "行",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960240",
+            "item": "高",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960257",
+            "item": "合",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960297",
+            "item": "黒",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960333",
+            "item": "今",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960396",
+            "item": "左",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960558",
+            "item": "作",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960570",
+            "item": "昨",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960657",
+            "item": "三",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960663",
+            "item": "山",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960741",
+            "item": "四",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960749",
+            "item": "始",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960750",
+            "item": "姉",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960756",
+            "item": "子",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960762",
+            "item": "市",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960797",
+            "item": "止",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960798",
+            "item": "死",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960818",
+            "item": "紙",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960864",
+            "item": "事",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960879",
+            "item": "寺",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960921",
+            "item": "自",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960957",
+            "item": "七",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960972",
+            "item": "室",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961020",
+            "item": "写",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961038",
+            "item": "社",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961044",
+            "item": "者",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961050",
+            "item": "車",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961116",
+            "item": "手",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961137",
+            "item": "首",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961233",
+            "item": "週",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961260",
+            "item": "十",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961313",
+            "item": "出",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961434",
+            "item": "女",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961494",
+            "item": "小",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961497",
+            "item": "少",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961661",
+            "item": "上",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961680",
+            "item": "場",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961755",
+            "item": "色",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961761",
+            "item": "食",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961794",
+            "item": "心",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961821",
+            "item": "申",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961869",
+            "item": "人",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961920",
+            "item": "図",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3961941",
+            "item": "水",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962028",
+            "item": "世",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962079",
+            "item": "正",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962090",
+            "item": "生",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962102",
+            "item": "声",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962106",
+            "item": "西",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962124",
+            "item": "青",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962180",
+            "item": "赤",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962190",
+            "item": "切",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962232",
+            "item": "先",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962235",
+            "item": "千",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962250",
+            "item": "川",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962346",
+            "item": "前",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962358",
+            "item": "全",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962495",
+            "item": "早",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962619",
+            "item": "足",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962673",
+            "item": "多",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962676",
+            "item": "太",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962718",
+            "item": "体",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962787",
+            "item": "代",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962790",
+            "item": "台",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962793",
+            "item": "大",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3962991",
+            "item": "男",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963000",
+            "item": "知",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963063",
+            "item": "茶",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963071",
+            "item": "中",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963096",
+            "item": "虫",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963132",
+            "item": "丁",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963177",
+            "item": "朝",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963186",
+            "item": "町",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963221",
+            "item": "長",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963380",
+            "item": "弟",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963495",
+            "item": "天",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963501",
+            "item": "店",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963534",
+            "item": "田",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963537",
+            "item": "電",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963615",
+            "item": "冬",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963621",
+            "item": "刀",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963656",
+            "item": "東",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963792",
+            "item": "道",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963831",
+            "item": "読",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963906",
+            "item": "内",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963959",
+            "item": "二",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963975",
+            "item": "肉",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963984",
+            "item": "日",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3963992",
+            "item": "入",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964035",
+            "item": "年",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964194",
+            "item": "売",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964236",
+            "item": "白",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964308",
+            "item": "八",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964362",
+            "item": "半",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964434",
+            "item": "番",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964463",
+            "item": "彼",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964614",
+            "item": "百",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964710",
+            "item": "不",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964755",
+            "item": "父",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964868",
+            "item": "物",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964872",
+            "item": "分",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964911",
+            "item": "聞",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3964950",
+            "item": "米",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965064",
+            "item": "母",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965115",
+            "item": "方",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965252",
+            "item": "北",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965253",
+            "item": "僕",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965298",
+            "item": "本",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965334",
+            "item": "毎",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965394",
+            "item": "万",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965463",
+            "item": "無",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965492",
+            "item": "名",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965576",
+            "item": "木",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965613",
+            "item": "門",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965625",
+            "item": "夜",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965703",
+            "item": "友",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965721",
+            "item": "有",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965766",
+            "item": "夕",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965811",
+            "item": "曜",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965829",
+            "item": "用",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965898",
+            "item": "来",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965963",
+            "item": "理",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3965991",
+            "item": "立",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3966093",
+            "item": "良",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3966327",
+            "item": "六",
+            "level": 8
+        },
+        {
+            "_id": "Kanji/3960285",
+            "item": "国",
+            "level": 9
+        },
+        {
+            "_id": "Kanji/3960810",
+            "item": "私",
+            "level": 9
+        },
+        {
+            "_id": "Kanji/3959352",
+            "item": "斤",
+            "level": 9001
+        }
+    ]
+}
