@@ -157,7 +157,7 @@ struct ModifiySentenceView: View {
 		let session = LanguageModelSession(
 			tools: [
 				KnownGrammarStructuresTool(),
-				KnownVocabularyTool(),
+				KnownVocabKanjiTool(),
 //				AlreadyKnownSentencesTool(),
 			],
 			instructions: instructions

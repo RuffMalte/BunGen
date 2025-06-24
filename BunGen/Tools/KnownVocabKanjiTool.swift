@@ -9,7 +9,7 @@ import Foundation
 import FoundationModels
 
 
-struct KnownVocabularyTool: Tool {
+struct KnownVocabKanjiTool: Tool {
 
 	
 	
