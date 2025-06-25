@@ -54,11 +54,6 @@ struct KnownVocabKanjiTool: Tool {
 				.toStringArray { "\($0.item)" }
 			
 			known.append(contentsOf: last250Kanji)
-
-			
-			
-			
-			//TODO: limit this to maybe 500 entries and just say all the ones that would typically be learned before
 		} catch(let error) {
 			print(error.localizedDescription)
 		}

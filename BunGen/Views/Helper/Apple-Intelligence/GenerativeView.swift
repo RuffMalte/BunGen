@@ -9,8 +9,29 @@
 import SwiftUI
 import FoundationModels
 
+struct GenerativeViewAvailabilityView: View {
+	var body: some View {
+		VStack {
+			Spacer()
+			GenerativeViewAvailabilityLabel()
+				.font(
+					.system(
+						.headline,
+						design: .monospaced,
+						weight: .bold
+					)
+				)
+				.padding()
+				.glassEffect(.regular.interactive(), in: .capsule)
+		}
+	}
+}
+#Preview {
+	GenerativeViewAvailabilityView()
+}
+
 @available(macOS 26.0, *)
-struct GenerativeView: View {
+struct GenerativeViewAvailabilityLabel: View {
 	// Create a reference to the system language model.
 	private var model = SystemLanguageModel.default
 	
@@ -40,6 +61,4 @@ struct GenerativeView: View {
 	}
 }
 
-#Preview {
-	GenerativeView()
-}
+

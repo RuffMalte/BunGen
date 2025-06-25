@@ -12,6 +12,7 @@ struct SentencesMainView: View {
 	@Namespace var namespace
 	@EnvironmentObject var sentenceViewModel: SentenceViewModel
 
+	@State private var isShowingSettingsView: Bool = false
 
     var body: some View {
 		NavigationStack {
@@ -23,6 +24,29 @@ struct SentencesMainView: View {
 				}
 				ForEach(sentenceViewModel.sentences, id: \.self) { sentence in
 					Text(sentence)
+					
+				}
+			}
+			
+			.sheet(isPresented: $isShowingSettingsView) {
+				SettingsMainView()
+			}
+			.toolbar {
+				ToolbarItem(placement: .primaryAction) {
+					HStack {
+						Menu {
+	
+						} label: {
+							Label("Statistics", systemImage: "chart.bar.fill")
+						}
+						
+						Button {
+							isShowingSettingsView.toggle()
+						} label: {
+							Label("Settings", systemImage: "gearshape.fill")
+						}
+					}
+					
 					
 				}
 			}
