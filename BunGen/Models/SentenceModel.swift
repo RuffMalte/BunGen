@@ -161,6 +161,16 @@ struct AISentenceResponse {
 	
 }
 
+extension AISentenceResponse {
+	static let sample: AISentenceResponse = AISentenceResponse(
+		rating: .good,
+		confidence: 0.9,
+		explanation: "This is correct.",
+		corrected: nil,
+		suggestions: []
+	)
+}
+
 
 extension SentenceModel {
 	static let samples: [SentenceModel] = [

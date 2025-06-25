@@ -108,11 +108,11 @@ enum MainTabs: String, CaseIterable, Hashable {
 	@ViewBuilder var bottomAccessory: some View {
 		switch self {
 		case .trainer:
-			Label("Open Trainer", systemImage: "chevron.down")
+			Label("Open Trainer", systemImage: "dumbbell.fill")
 		case .daily:
 			Label("New Daily", systemImage: "chevron.down")
 		case .sentences:
-			Label("New Sentence", systemImage: "chevron.down")
+			Label("New Sentence", systemImage: "apple.intelligence")
 		}
 	}
 }
