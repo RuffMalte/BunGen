@@ -1,5 +1,5 @@
 //
-//  KnownVocabularyTool.swift
+//  KnownVocabKanjiTool.swift
 //  BunGen
 //
 //  Created by Malte Ruff on 23.06.25.

@@ -22,6 +22,8 @@ struct ModifiySentenceView: View {
 
 	@State private var aiAnswerError: String?
 	
+	@EnvironmentObject var sentenceViewModel: SentenceViewModel
+	
     var body: some View {
 		NavigationStack {
 			Form {
@@ -143,6 +145,8 @@ struct ModifiySentenceView: View {
 			- Strive for originality and variety in both content and structure.
 			- You can use the tools available to you to genereated better responses, you shouls **ALWAYS** check if the grammar is in the known grammar of the user, the topic matches, if the senctence is already in the database (or anything similar) and also if you are using vocabulary that is known to the user. **ALWAYS** check this!
 			- NEVER CREATE ANYTHING INNAPROPRIATE! or other content that might not be seen as PG! Always try to create a family friendly answer! That can be apprichiated by all cultures and every human beeing without being offensive in any way. The content must not be unsafe in any way!!! **ALWAYS** ensure this!
+			- The following where the last generated Senteces, do not ever present these again or anything similar: \(sentenceViewModel.sentences.joined(separator: "\n"))
+			- Be creative when creating the sentence!!!
 			"""
 		
 		let prompt: String = """
@@ -158,7 +162,6 @@ struct ModifiySentenceView: View {
 			tools: [
 				KnownGrammarStructuresTool(),
 				KnownVocabKanjiTool(),
-//				AlreadyKnownSentencesTool(),
 			],
 			instructions: instructions
 		)
@@ -177,6 +180,8 @@ struct ModifiySentenceView: View {
 					print(newSentence.japanese)
 					isAnswering = false
 				}
+				
+				sentenceViewModel.addSentence(newSentence.japanese)
 			} catch let error as LanguageModelSession.GenerationError {
 				aiAnswerError = error.localizedDescription
 				print("generation error")

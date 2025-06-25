@@ -28,4 +28,7 @@ class MaruMoriViewModel {
 		return vocab.items.filter { range.contains($0.level) }
 	}
 	
+	
+	
+	
 }

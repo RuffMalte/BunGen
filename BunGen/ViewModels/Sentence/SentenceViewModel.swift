@@ -1,46 +1,70 @@
 //
-//  AlreadyKnownSentencesTool.swift
+//  SentenceViewModel.swift
 //  BunGen
 //
-//  Created by Malte Ruff on 23.06.25.
+//  Created by Malte Ruff on 25.06.25.
 //
 
 import Foundation
-import FoundationModels
+import SwiftUI
+import Observation
+import Combine
 
-struct AlreadyKnownSentencesTool: Tool {
-	
-	
-	let name: String = "already-known-sentences"
-	let description: String = "Generates a List of all known sentences."
-	
-	
-	@Generable
-	struct Arguments {
-		@Guide(description: "The level of Sentence to get in JLPT level", .range(1...5))
-		var JLPTLevel: Int
-		
-		@Guide(description: "The input Japanese sentence to search if it has been created before")
-		var japaneseSentence: String
-		
-		var topic: String
+
+class SentenceViewModel: ObservableObject {
+
+	@Published var sentences: [String] = []
+	@Published var sentencesTotal: Int {
+		didSet {
+			trimToLimit()
+			SentenceStorage.saveSentences(sentences)
+		}
 	}
 	
-	
-	
-	func call(arguments: Arguments) async throws -> ToolOutput {
-		
-		var knownVocabulary: [String] = []
-		
-		knownVocabulary = n5ProgrammingSentences
-		
-		print("Called tool: " + arguments.japaneseSentence.description)
-		
-		let formattedOutput: String = knownVocabulary.joined(separator: "\n")
-		
-		return ToolOutput(formattedOutput)
+	init(sentencesTotal: Int = 100) {
+		self.sentencesTotal = sentencesTotal
+		self.sentences = SentenceStorage.getSentences()
+		trimToLimit()
 	}
 	
+	// Add a new sentence, ensuring no duplicates and enforcing limit
+	func addSentence(_ sentence: String) {
+		guard !sentence.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+		if !sentences.contains(sentence) {
+			sentences.append(sentence)
+			trimToLimit()
+			SentenceStorage.saveSentences(sentences)
+		}
+	}
+	
+	// Get the latest N sentences (default 40)
+	func getLatest(_ count: Int = 40) -> [String] {
+		let safeCount = max(0, min(count, sentences.count))
+		return Array(sentences.suffix(safeCount))
+	}
+	
+	// Trim the array if it exceeds the current limit
+	private func trimToLimit() {
+		if sentences.count > sentencesTotal {
+			sentences = Array(sentences.suffix(sentencesTotal))
+		}
+	}
+	
+	// Call this if you change sentencesTotal externally
+	func updateSentencesTotal(_ newTotal: Int) {
+		sentencesTotal = newTotal
+		trimToLimit()
+		SentenceStorage.saveSentences(sentences)
+	}
+}
+
+extension SentenceViewModel {
+	/// Adds a predefined list of sentences, ensuring no duplicates and respecting the sentence limit.
+	func addInitialSentences(_ sentencesToAdd: [String]) {
+		for sentence in sentencesToAdd {
+			addSentence(sentence)
+		}
+	}
 }
 
 let n5ProgrammingSentences: [String] = [

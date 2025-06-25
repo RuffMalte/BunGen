@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+	
+	@StateObject var sentenceViewModel: SentenceViewModel = .init()
+	
     var body: some View {
 		MainTabView()
+			.environmentObject(sentenceViewModel)
     }
 }
 
