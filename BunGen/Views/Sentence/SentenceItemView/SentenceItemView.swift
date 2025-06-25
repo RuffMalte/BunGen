@@ -23,49 +23,13 @@ struct SentenceItemView: View {
 	@State private var number: Int = 10
 	var body: some View {
 		if let sentence = sentence {
-			Section {
-				HStack {
-					Spacer()
-					VStack(alignment: .center) {
-						Text(sentence.japanese)
-						
-						Text(sentence.romanized)
-							.font(
-								.system(
-									.caption2,
-									design: .rounded,
-									weight: .regular
-								)
-							)
-							.foregroundStyle(.secondary)
-					}
-					Spacer()
+			SentenceItemHeaderView(sentence: sentence)
+				.onAppear {
+					answer = ""
+					submittedAnswer = false
+					isAnswering = false
+					answerWasCorrect = nil
 				}
-				.padding(.vertical, 40)
-			}
-			.onAppear {
-				answer = ""
-				submittedAnswer = false
-				isAnswering = false
-				answerWasCorrect = nil
-			}
-			.overlay {
-				VStack {
-					HStack {
-						Spacer()
-						Text(sentence.level.rawValue)
-							.foregroundStyle(sentence.level.color.gradient)
-							.font(
-								.system(
-									.headline,
-									design: .rounded,
-									weight: .black
-								)
-							)
-					}
-					Spacer()
-				}
-			}
 			
 			
 			if let wasCorrect = answerWasCorrect {

@@ -12,7 +12,7 @@ import Combine
 
 
 class SentenceViewModel: ObservableObject {
-
+	
 	@Published var sentences: [String] = []
 	@Published var sentencesTotal: Int {
 		didSet {
@@ -54,6 +54,22 @@ class SentenceViewModel: ObservableObject {
 	func updateSentencesTotal(_ newTotal: Int) {
 		sentencesTotal = newTotal
 		trimToLimit()
+		SentenceStorage.saveSentences(sentences)
+	}
+	
+	func removeSentence(at index: Int) {
+		guard sentences.indices.contains(index) else { return }
+		sentences.remove(at: index)
+		SentenceStorage.saveSentences(sentences)
+	}
+	
+	func removeSentences(at indices: IndexSet) {
+		sentences.remove(atOffsets: indices)
+		SentenceStorage.saveSentences(sentences)
+	}
+	
+	func deleteAllSentences() {
+		sentences.removeAll()
 		SentenceStorage.saveSentences(sentences)
 	}
 }

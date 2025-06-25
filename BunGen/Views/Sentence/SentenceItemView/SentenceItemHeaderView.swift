@@ -1,0 +1,59 @@
+//
+//  SentenceItemHeaderView.swift
+//  BunGen
+//
+//  Created by Malte Ruff on 25.06.25.
+//
+
+import SwiftUI
+
+struct SentenceItemHeaderView: View {
+	
+	let sentence: SentenceModel
+	
+    var body: some View {
+		Section {
+			HStack {
+				Spacer()
+				VStack(alignment: .center) {
+					Text(sentence.japanese)
+					
+					Text(sentence.romanized)
+						.font(
+							.system(
+								.caption2,
+								design: .rounded,
+								weight: .regular
+							)
+						)
+						.foregroundStyle(.secondary)
+				}
+				Spacer()
+			}
+			.padding(.vertical, 40)
+		}
+		.overlay {
+			VStack {
+				HStack {
+					Spacer()
+					Text(sentence.level.rawValue)
+						.foregroundStyle(sentence.level.color.gradient)
+						.font(
+							.system(
+								.headline,
+								design: .rounded,
+								weight: .black
+							)
+						)
+				}
+				Spacer()
+			}
+		}
+	}
+}
+
+#Preview {
+	Form {
+		SentenceItemHeaderView(sentence: SentenceModel.samples.first!)
+	}
+}

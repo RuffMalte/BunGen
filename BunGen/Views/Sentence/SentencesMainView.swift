@@ -18,38 +18,30 @@ struct SentencesMainView: View {
 		NavigationStack {
 			Form {
 				Button {
-					sentenceViewModel.addInitialSentences(n5ProgrammingSentences)
+					withAnimation {
+						sentenceViewModel.addInitialSentences(n5ProgrammingSentences)
+					}
 				} label: {
 					Text("Add default sentences")
 				}
+				
 				ForEach(sentenceViewModel.sentences, id: \.self) { sentence in
 					Text(sentence)
-					
 				}
-			}
-			
-			.sheet(isPresented: $isShowingSettingsView) {
-				SettingsMainView()
-			}
-			.toolbar {
-				ToolbarItem(placement: .primaryAction) {
-					HStack {
-						Menu {
-	
-						} label: {
-							Label("Statistics", systemImage: "chart.bar.fill")
-						}
-						
-						Button {
-							isShowingSettingsView.toggle()
-						} label: {
-							Label("Settings", systemImage: "gearshape.fill")
-						}
+				.onDelete(perform: sentenceViewModel.removeSentences)
+
+				
+				Button {
+					withAnimation {
+						sentenceViewModel.deleteAllSentences()
 					}
-					
-					
+				} label: {
+					Text("Delete All")
 				}
 			}
+			.navigationTitle("Sentences")
+			.navigationBarTitleDisplayMode(.inline)
+
 //				ForEach(nLevel.allCases, id: \.self) { level in
 //					let sentencesForLevel = SentenceModel.samples.filter { $0.level == level }
 //					if !sentencesForLevel.isEmpty {
@@ -95,12 +87,12 @@ struct SentencesMainView: View {
 //					}
 //				}
 //			}
-			.navigationTitle("Sentences")
-			.navigationBarTitleDisplayMode(.inline)
+
 		}
     }
 }
 
 #Preview {
     SentencesMainView()
+		.environmentObject(SentenceViewModel())
 }
