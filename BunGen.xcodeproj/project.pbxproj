@@ -6,11 +6,65 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2E442A722E0DE10400BCCE2F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E442A712E0DE10400BCCE2F /* WidgetKit.framework */; };
+		2E442A742E0DE10400BCCE2F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E442A732E0DE10400BCCE2F /* SwiftUI.framework */; };
+		2E442A812E0DE10600BCCE2F /* BunGen-WidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2E442A6F2E0DE10400BCCE2F /* BunGen-WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2E442AA12E0DEC3A00BCCE2F /* DailyPraticeTrackerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E442A9E2E0DEBFA00BCCE2F /* DailyPraticeTrackerAttributes.swift */; };
+		2E442AA22E0DEC3A00BCCE2F /* DailyPraticeTrackerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E442A9E2E0DEBFA00BCCE2F /* DailyPraticeTrackerAttributes.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2E442A7F2E0DE10600BCCE2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EB774162E08646B000A7383 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E442A6E2E0DE10400BCCE2F;
+			remoteInfo = "BunGen-WidgetsExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2E442A862E0DE10600BCCE2F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2E442A812E0DE10600BCCE2F /* BunGen-WidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2E442A6F2E0DE10400BCCE2F /* BunGen-WidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BunGen-WidgetsExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E442A712E0DE10400BCCE2F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
+		2E442A732E0DE10400BCCE2F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
+		2E442A9E2E0DEBFA00BCCE2F /* DailyPraticeTrackerAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPraticeTrackerAttributes.swift; sourceTree = "<group>"; };
 		2EB7741E2E08646B000A7383 /* BunGen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BunGen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2E442A822E0DE10600BCCE2F /* Exceptions for "BunGen-Widgets" folder in "BunGen-WidgetsExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2E442A6E2E0DE10400BCCE2F /* BunGen-WidgetsExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		2E442A752E0DE10400BCCE2F /* BunGen-Widgets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2E442A822E0DE10600BCCE2F /* Exceptions for "BunGen-Widgets" folder in "BunGen-WidgetsExtension" target */,
+			);
+			path = "BunGen-Widgets";
+			sourceTree = "<group>";
+		};
 		2EB774202E08646B000A7383 /* BunGen */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = BunGen;
@@ -19,6 +73,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2E442A6C2E0DE10400BCCE2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E442A742E0DE10400BCCE2F /* SwiftUI.framework in Frameworks */,
+				2E442A722E0DE10400BCCE2F /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EB7741B2E08646B000A7383 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -29,10 +92,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E442A702E0DE10400BCCE2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E442A712E0DE10400BCCE2F /* WidgetKit.framework */,
+				2E442A732E0DE10400BCCE2F /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E442A882E0DE2DB00BCCE2F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2E442A9E2E0DEBFA00BCCE2F /* DailyPraticeTrackerAttributes.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		2EB774152E08646B000A7383 = {
 			isa = PBXGroup;
 			children = (
+				2E442A882E0DE2DB00BCCE2F /* Shared */,
 				2EB774202E08646B000A7383 /* BunGen */,
+				2E442A752E0DE10400BCCE2F /* BunGen-Widgets */,
+				2E442A702E0DE10400BCCE2F /* Frameworks */,
 				2EB7741F2E08646B000A7383 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				2EB7741E2E08646B000A7383 /* BunGen.app */,
+				2E442A6F2E0DE10400BCCE2F /* BunGen-WidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +132,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2E442A6E2E0DE10400BCCE2F /* BunGen-WidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E442A832E0DE10600BCCE2F /* Build configuration list for PBXNativeTarget "BunGen-WidgetsExtension" */;
+			buildPhases = (
+				2E442A6B2E0DE10400BCCE2F /* Sources */,
+				2E442A6C2E0DE10400BCCE2F /* Frameworks */,
+				2E442A6D2E0DE10400BCCE2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2E442A752E0DE10400BCCE2F /* BunGen-Widgets */,
+			);
+			name = "BunGen-WidgetsExtension";
+			packageProductDependencies = (
+			);
+			productName = "BunGen-WidgetsExtension";
+			productReference = 2E442A6F2E0DE10400BCCE2F /* BunGen-WidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		2EB7741D2E08646B000A7383 /* BunGen */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EB774292E08646D000A7383 /* Build configuration list for PBXNativeTarget "BunGen" */;
@@ -55,10 +161,12 @@
 				2EB7741A2E08646B000A7383 /* Sources */,
 				2EB7741B2E08646B000A7383 /* Frameworks */,
 				2EB7741C2E08646B000A7383 /* Resources */,
+				2E442A862E0DE10600BCCE2F /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2E442A802E0DE10600BCCE2F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				2EB774202E08646B000A7383 /* BunGen */,
@@ -80,6 +188,9 @@
 				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					2E442A6E2E0DE10400BCCE2F = {
+						CreatedOnToolsVersion = 26.0;
+					};
 					2EB7741D2E08646B000A7383 = {
 						CreatedOnToolsVersion = 26.0;
 					};
@@ -100,11 +211,19 @@
 			projectRoot = "";
 			targets = (
 				2EB7741D2E08646B000A7383 /* BunGen */,
+				2E442A6E2E0DE10400BCCE2F /* BunGen-WidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2E442A6D2E0DE10400BCCE2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EB7741C2E08646B000A7383 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,16 +234,115 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2E442A6B2E0DE10400BCCE2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E442AA22E0DEC3A00BCCE2F /* DailyPraticeTrackerAttributes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EB7741A2E08646B000A7383 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E442AA12E0DEC3A00BCCE2F /* DailyPraticeTrackerAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2E442A802E0DE10600BCCE2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E442A6E2E0DE10400BCCE2F /* BunGen-WidgetsExtension */;
+			targetProxy = 2E442A7F2E0DE10600BCCE2F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2E442A842E0DE10600BCCE2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DRJ4KKKV4T;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BunGen-Widgets/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "BunGen-Widgets";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MalteRuff.BunGen.BunGen-Widgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		2E442A852E0DE10600BCCE2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DRJ4KKKV4T;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BunGen-Widgets/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "BunGen-Widgets";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MalteRuff.BunGen.BunGen-Widgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
 		2EB774272E08646D000A7383 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -254,6 +472,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -263,12 +482,12 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
+				NSSupportsLiveActivities = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MalteRuff.BunGen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -297,6 +516,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -306,12 +526,12 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
+				NSSupportsLiveActivities = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MalteRuff.BunGen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -330,6 +550,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2E442A832E0DE10600BCCE2F /* Build configuration list for PBXNativeTarget "BunGen-WidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E442A842E0DE10600BCCE2F /* Debug */,
+				2E442A852E0DE10600BCCE2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2EB774192E08646B000A7383 /* Build configuration list for PBXProject "BunGen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

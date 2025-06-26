@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Combine
 
 struct DailyMainView: View {
+	
+
     var body: some View {
-		Text("Hello, World! from Daily")
+
     }
 }
 

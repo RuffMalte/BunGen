@@ -54,7 +54,7 @@ struct MainTabView: View {
 			case .sentences:
 				ModifiySentenceView()
 			case .daily:
-				Text("Hello 2")
+				ModifySheetView()
 			case .trainer:
 				Text("Hello 3")
 			}
