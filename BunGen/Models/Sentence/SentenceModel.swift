@@ -11,29 +11,49 @@ import SwiftData
 class SentenceModel: Identifiable {
 	@Attribute(.unique) var id: String
 	var generatedSentence: SentenceModel_Generable
-	var userInput: String?
-	var aiAnswerForUserInput: AISentenceResponse?
-	var senteceTopic: SentenceTopicEnum?
+	var userInput: String
+	var aiAnswerForUserInput: AISentenceResponse
+	var senteceTopic: SentenceTopicEnum
 	
 	
-	init(generatedSentence: SentenceModel_Generable) {
+	init(
+		generatedSentence: SentenceModel_Generable,
+		userInput: String,
+		aiAnswerForUserInput: AISentenceResponse,
+		senteceTopic: SentenceTopicEnum,
+		icon: String = "square.and.arrow.up",
+	) {
 		self.id = generatedSentence.id
 		self.generatedSentence = generatedSentence
+		self.userInput = userInput
+		self.aiAnswerForUserInput = aiAnswerForUserInput
+		self.senteceTopic = senteceTopic
+		self.icon = icon
 	}
 	
-	var icon: String = "square.and.arrow.up"
+	var icon: String
 	var dateAdded: Date = Date()
 }
 
 extension SentenceModel {
 	static let sampleData: [SentenceModel] = [
-		.init(generatedSentence: .samples[0]),
-		.init(generatedSentence: .samples[1]),
-		.init(generatedSentence: .samples[2]),
-		.init(generatedSentence: .samples[3]),
-		.init(generatedSentence: .samples[4]),
-		.init(generatedSentence: .samples[5]),
-		.init(generatedSentence: .samples[6]),
-		.init(generatedSentence: .samples[7])
+		.init(
+			generatedSentence: .samples[0],
+			userInput: "",
+			aiAnswerForUserInput: .sample,
+			senteceTopic: .art
+		),
+		.init(
+			generatedSentence: .samples[1],
+			userInput: "",
+			aiAnswerForUserInput: .sample,
+			senteceTopic: .art
+		),
+		.init(
+			generatedSentence: .samples[2],
+			userInput: "",
+			aiAnswerForUserInput: .sample,
+			senteceTopic: .art
+		),
 	]
 }

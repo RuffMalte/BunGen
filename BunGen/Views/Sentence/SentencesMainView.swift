@@ -24,12 +24,62 @@ struct SentencesMainView: View {
 
 			} else {
 				Form {
+					Section {
+						LazyVGrid(
+							columns: Array(repeating: GridItem(.flexible()), count: 2),
+							spacing: 10
+						) {
+								
+								VStack {
+									Text("Sentences")
+										.font(
+											.system(
+												.headline,
+												design: .rounded,
+												weight: .bold
+											)
+										)
+									
+									Text(sentences.count, format: .number)
+										.font(
+											.system(
+												.largeTitle,
+												design: .monospaced,
+												weight: .black
+											)
+										)
+								}
+								
+								VStack {
+									
+									Text("Correct")
+										.font(
+											.system(
+												.headline,
+												design: .rounded,
+												weight: .bold
+											)
+										)
+									let numberOfTimesCorrect = sentences.filter { $0.aiAnswerForUserInput.rating == .good }.count
+
+									Text(numberOfTimesCorrect, format: .number)
+										.font(
+											.system(
+												.largeTitle,
+												design: .monospaced,
+												weight: .black
+											)
+										)
+								}
+								
+							}
+					}
+					.listRowBackground(Color.clear)
+					.listRowInsets(.all, 0)
+					
 					ForEach(sentences) { sentence in
 						NavigationLink {
-							Text(
-								sentence.dateAdded
-									.ISO8601Format(.iso8601WithTimeZone())
-							)
+							ModifySentenceView(sentence: sentence)
 						} label: {
 							SentenceListItemView(sentence: sentence)
 						}

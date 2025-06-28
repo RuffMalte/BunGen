@@ -84,6 +84,7 @@ struct GenerateNewSentenceSheetView: View {
 			- NEVER CREATE ANYTHING INNAPROPRIATE! or other content that might not be seen as PG! Always try to create a family friendly answer! That can be apprichiated by all cultures and every human beeing without being offensive in any way. The content must not be unsafe in any way!!! **ALWAYS** ensure this!
 			- The following where the last generated Senteces, do not ever present these again or anything similar: \(         latestItems.map { $0.generatedSentence.japanese }.joined(separator: "\n"))
 			- Be creative when creating the sentence!!!
+			- ALso try to create sentences that are challeging to the users current JLPT level, and also dont create short sentences!
 		"""
 		
 		let prompt: String = """
@@ -93,7 +94,7 @@ struct GenerateNewSentenceSheetView: View {
 		   - Topic: \(selectedTopic.name)
 		   - Sentences JLPT-Level: \(selectedDifficulty.rawValue)
 		   """
-		
+		//TODO: Sentence Length picker
 		let session = LanguageModelSession(
 			tools: [
 				KnownGrammarStructuresTool(),
@@ -157,6 +158,8 @@ struct GenerateNewSentenceSheetView: View {
 			isAnswering = true
 			answerWasCorrect = nil
 		}
+		
+		print("sentence" + (sentence?.japanese ?? "NIL"))
 		let intructions: String = """
 			You are a Japanese learning instructor, this is the sentence the user was presented: '\(sentence?.japanese ?? "")'. Your job is to look if the answer is correct, you can be lenient and allow answers that are logically right but are not exactly the answer: '\(sentence?.english ?? "")'.
 			"""
@@ -177,18 +180,21 @@ struct GenerateNewSentenceSheetView: View {
 				submittedAnswer = false
 				isAnswering = false
 			}
+			print("sentence" + (sentence?.japanese ?? "NIL"))
+			
+			if let sentence, let answerWasCorrect {
+				let newSwiftDataModel = SentenceModel(
+					generatedSentence: sentence,
+					userInput: answer,
+					aiAnswerForUserInput: answerWasCorrect,
+					senteceTopic: selectedTopic
+				)
+				
+				modelContext.insert(newSwiftDataModel)
+				try? modelContext.save()
+			}
 		}
 		
-		if let sentence {
-			let newSwiftDataModel = SentenceModel(
-				generatedSentence: sentence
-			)
-			newSwiftDataModel.userInput = answer
-			newSwiftDataModel.aiAnswerForUserInput = answerWasCorrect
-			newSwiftDataModel.senteceTopic = selectedTopic
-			
-			modelContext.insert(newSwiftDataModel)
-		}
 	}
 
 }

@@ -28,10 +28,9 @@ struct SentenceListItemView: View {
 					)
 					Spacer()
 					
-					if let topic = sentence.senteceTopic {
-						Image(systemName: topic.icon)
-							.foregroundStyle(.secondary)
-					}
+					Image(systemName: sentence.senteceTopic.icon)
+						.foregroundStyle(.secondary)
+					
 					
 					
 				}
