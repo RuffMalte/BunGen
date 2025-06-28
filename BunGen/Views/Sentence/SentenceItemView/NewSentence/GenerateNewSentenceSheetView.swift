@@ -9,144 +9,41 @@ import SwiftUI
 import FoundationModels
 
 struct GenerateNewSentenceSheetView: View {
-	
 	@State var sentence: SentenceModel?
-	
 	@State private var isAnswering = false
 	
 	@State var selectedDifficulty: jlptLevelEnum = .N5
 	@State private var selectedTopic: SentenceTopicEnum = .programming
 	
-	
 	@State private var aiAnswerError: String?
-	@EnvironmentObject var sentenceViewModel: SentenceViewModel
-		
-	
-	@State var answer: String = ""
 	@State private var submittedAnswer: Bool = false
 	
+	@State var answer: String = ""
 	@State private var answerWasCorrect: AISentenceResponse?
+	@EnvironmentObject var sentenceViewModel: SentenceViewModel
 	
-
-    var body: some View {
+	var body: some View {
 		NavigationStack {
-			Form {
-				if let sentence {
-					
-					SentenceItemHeaderView(sentence: sentence)
-						
-					if let answerWasCorrect {
-						SentenceFeedbackView(aiSentenceReport: answerWasCorrect)
-
-					}
-					
-				} else {
-					Section("Generation Options") {
-						NewSenteceDifficultyPicker(
-							selectedDifficulty: $selectedDifficulty
-						)
-						NewSentenceTopicPicker(
-							selectedTopic: $selectedTopic
-						)
-					}
-					
-				}
-				
-				if let aiAnswerError {
-					Section {
-						ForEach(aiAnswerError.split(separator: "\n"), id: \.self) { row in
-							Text(row)
-						}
-						
-							
-						
-					}
-				}
-				
-			}
-			.onChange(of: isAnswering, { old, new in
-				print("isAnswering changed from \(old) to \(new)")
-			})
+			SentenceFormView(
+				sentence: sentence,
+				answerWasCorrect: answerWasCorrect,
+				aiAnswerError: aiAnswerError,
+				selectedDifficulty: $selectedDifficulty,
+				selectedTopic: $selectedTopic
+			)
 			.navigationTitle("Generate New Sentence")
 			.toolbar {
-				if sentence == nil {
-					ToolbarSpacer(.flexible, placement: .bottomBar)
-					ToolbarItemGroup(placement: .bottomBar) {
-						Button(role: .confirm) {
-							generateSentence()
-						} label: {
-							Image(systemName: (isAnswering) ? "apple.intelligence" : "apple.intelligence")
-								.contentTransition(.symbolEffect(.automatic))
-								.symbolEffect(
-									.rotate.byLayer,
-									options: isAnswering ? .repeat(.periodic(delay: 0.0)) : .default,
-									value: isAnswering
-								)
-							
-						}
-						.disabled(isAnswering)
-					}
-				} else {
-					if answerWasCorrect != nil {
-						ToolbarSpacer(.flexible, placement: .bottomBar)
-						
-						ToolbarItem(placement: .bottomBar) {
-							Button(role: .confirm) {
-								withAnimation {
-									self.sentence = nil
-								}
-							} label: {
-								Image(systemName: "arrow.trianglehead.2.clockwise")
-							}
-						}
-						
-//						TOOD: find a way to fix this 
-//						ToolbarItem(placement: .bottomBar) {
-//							Button(role: .confirm) {
-//								generateSentence()
-//								
-//							} label: {
-//								Image(systemName: "point.topright.arrow.triangle.backward.to.point.bottomleft.filled.scurvepath")
-//							}
-//						}
-						
-					} else {
-						ToolbarItem(placement: .bottomBar) {
-							Button {
-								hideKeyboard()
-							} label: {
-								Label("Hide keyboard", systemImage: "keyboard.chevron.compact.down.fill")
-									.labelStyle(.iconOnly)
-							}
-						}
-						ToolbarSpacer(.flexible, placement: .bottomBar)
-						
-						ToolbarItem(placement: .bottomBar) {
-							TextField("Your Answer that will be graded", text: $answer, axis: .vertical)
-								.lineLimit(1, reservesSpace: true)
-								.textFieldStyle(.plain)
-								.padding(.horizontal, 6)
-						}
-						ToolbarSpacer(.flexible, placement: .bottomBar)
-						
-						ToolbarItem(placement: .bottomBar) {
-							Button(role: .confirm) {
-								rateAnswer()
-							} label: {
-								Image(systemName: isAnswering ? "apple.intelligence" : "paperplane.fill")
-									.contentTransition(.symbolEffect(.replace))
-									.symbolEffect(
-										.rotate.byLayer,
-										options: isAnswering ? .repeat(.periodic(delay: 0.0)) : .default,
-										value: isAnswering
-									)
-							}
-						}
-					}
-				}
+				MainToolbarView(
+					sentence: $sentence,
+					answerWasCorrect: $answerWasCorrect,
+					answer: $answer,
+					isAnswering: $isAnswering,
+					generateSentence: generateSentence,
+					rateAnswer: rateAnswer
+				)
 			}
 		}
-    }
+	}
 	
 	func generateSentence() {
 		withAnimation {
