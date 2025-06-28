@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct SentenceMainToolbarView: ToolbarContent {
-	@Binding var sentence: SentenceModel?
+	@Binding var sentence: SentenceModel_Generable?
 	@Binding var answerWasCorrect: AISentenceResponse?
 	@Binding var answer: String
 	@Binding var isAnswering: Bool

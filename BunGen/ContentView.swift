@@ -6,14 +6,23 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
 	
-	@StateObject var sentenceViewModel: SentenceViewModel = .init()
+	let container: ModelContainer
+	
+	init() {
+		do {
+			container = try ModelContainer(for: SentenceModel.self)
+		} catch {
+			fatalError("Failed to create model container: \(error.localizedDescription)")
+		}
+	}
 	
     var body: some View {
 		MainTabView()
-			.environmentObject(sentenceViewModel)
+			.modelContainer(container)
     }
 }
 

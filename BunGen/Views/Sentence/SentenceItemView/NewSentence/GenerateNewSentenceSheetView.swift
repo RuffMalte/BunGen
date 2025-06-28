@@ -7,9 +7,10 @@
 
 import SwiftUI
 import FoundationModels
+import SwiftData
 
 struct GenerateNewSentenceSheetView: View {
-	@State var sentence: SentenceModel?
+	@State var sentence: SentenceModel_Generable?
 	@State private var isAnswering = false
 	
 	@State var selectedDifficulty: jlptLevelEnum = .N5
@@ -20,7 +21,20 @@ struct GenerateNewSentenceSheetView: View {
 	
 	@State var answer: String = ""
 	@State private var answerWasCorrect: AISentenceResponse?
-	@EnvironmentObject var sentenceViewModel: SentenceViewModel
+
+	
+	@Environment(\.modelContext) private var modelContext
+	@Query private var latestItems: [SentenceModel]
+	
+	init() {
+		var fetchDescriptor = FetchDescriptor<SentenceModel>(
+			sortBy: [SortDescriptor(\SentenceModel.dateAdded, order: .reverse)]
+		)
+		fetchDescriptor.fetchLimit = 150
+		_latestItems = Query(fetchDescriptor)
+	}
+
+	
 	
 	var body: some View {
 		NavigationStack {
@@ -54,23 +68,23 @@ struct GenerateNewSentenceSheetView: View {
 			self.isAnswering = true
 		}
 		let instructions: String = """
-		   You are a Japanese sentence generator. Your task is to create a single, natural, and grammatically correct Japanese sentence that matches the specified JLPT N-Level and topic.
-		   - Ensure the sentence is appropriate for the selected proficiency level (N5 = very simple, N1 = advanced).!!!
-		   - Use vocabulary and grammar suitable for the level.
-		   - The sentence must be relevant to the topic and easy to understand for learners at that level.
-		   - Avoid using slang, archaic, or overly complex expressions unless appropriate for the level.
-		   - Only use vocabulary that matches the selected JLPT level; avoid advanced vocabulary unless required by the level.
-		   - For each new sentence, use a unique grammatical structure or vocabulary that differs from typical or previously generated sentences for the same topic and level.
-		   - Avoid set phrases, textbook examples, or overly simple patterns if possible for the selected level.
-		   - Vary the sentence length and complexity within the boundaries of the selected JLPT level.
-		   - Imagine a new real-life situation or context each time you generate a sentence, and incorporate different names, places, or objects relevant to the topic to make each sentence unique.
-		   - Do not generate sentences that are structurally or semantically similar to previous examples.
-		   - Strive for originality and variety in both content and structure.
-		   - You can use the tools available to you to genereated better responses, you shouls **ALWAYS** check if the grammar is in the known grammar of the user, the topic matches, if the senctence is already in the database (or anything similar) and also if you are using vocabulary that is known to the user. **ALWAYS** check this!
-		   - NEVER CREATE ANYTHING INNAPROPRIATE! or other content that might not be seen as PG! Always try to create a family friendly answer! That can be apprichiated by all cultures and every human beeing without being offensive in any way. The content must not be unsafe in any way!!! **ALWAYS** ensure this!
-		   - The following where the last generated Senteces, do not ever present these again or anything similar: \(sentenceViewModel.sentences.joined(separator: "\n"))
-		   - Be creative when creating the sentence!!!
-		   """
+			You are a Japanese sentence generator. Your task is to create a single, natural, and grammatically correct Japanese sentence that matches the specified JLPT N-Level and topic.
+			- Ensure the sentence is appropriate for the selected proficiency level (N5 = very simple, N1 = advanced).!!!
+			- Use vocabulary and grammar suitable for the level.
+			- The sentence must be relevant to the topic and easy to understand for learners at that level.
+			- Avoid using slang, archaic, or overly complex expressions unless appropriate for the level.
+			- Only use vocabulary that matches the selected JLPT level; avoid advanced vocabulary unless required by the level.
+			- For each new sentence, use a unique grammatical structure or vocabulary that differs from typical or previously generated sentences for the same topic and level.
+			- Avoid set phrases, textbook examples, or overly simple patterns if possible for the selected level.
+			- Vary the sentence length and complexity within the boundaries of the selected JLPT level.
+			- Imagine a new real-life situation or context each time you generate a sentence, and incorporate different names, places, or objects relevant to the topic to make each sentence unique.
+			- Do not generate sentences that are structurally or semantically similar to previous examples.
+			- Strive for originality and variety in both content and structure.
+			- You can use the tools available to you to genereated better responses, you shouls **ALWAYS** check if the grammar is in the known grammar of the user, the topic matches, if the senctence is already in the database (or anything similar) and also if you are using vocabulary that is known to the user. **ALWAYS** check this!
+			- NEVER CREATE ANYTHING INNAPROPRIATE! or other content that might not be seen as PG! Always try to create a family friendly answer! That can be apprichiated by all cultures and every human beeing without being offensive in any way. The content must not be unsafe in any way!!! **ALWAYS** ensure this!
+			- The following where the last generated Senteces, do not ever present these again or anything similar: \(         latestItems.map { $0.generatedSentence.japanese }.joined(separator: "\n"))
+			- Be creative when creating the sentence!!!
+		"""
 		
 		let prompt: String = """
 		   Please generate a Japanese sentence with these parameters:
@@ -93,7 +107,7 @@ struct GenerateNewSentenceSheetView: View {
 			do {
 				let newSentence = try await session.respond(
 					to: prompt,
-					generating: SentenceModel.self
+					generating: SentenceModel_Generable.self
 				).content
 				
 				withAnimation {
@@ -103,7 +117,12 @@ struct GenerateNewSentenceSheetView: View {
 					isAnswering = false
 				}
 				
-				sentenceViewModel.addSentence(newSentence.japanese)
+				if let sentence {
+					let newSwiftDataModel = SentenceModel(
+						generatedSentence: sentence
+					)
+					modelContext.insert(newSwiftDataModel)
+				}
 			} catch let error as LanguageModelSession.GenerationError {
 				aiAnswerError = error.localizedDescription
 				print("generation error")

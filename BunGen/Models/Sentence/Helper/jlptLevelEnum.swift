@@ -6,9 +6,10 @@
 //
 import SwiftUI
 import FoundationModels
+import SwiftData
 
 @Generable
-enum jlptLevelEnum: String, CaseIterable, Identifiable {
+enum jlptLevelEnum: String, CaseIterable, Identifiable, Codable {
 	case N5
 	case N4
 	case N3

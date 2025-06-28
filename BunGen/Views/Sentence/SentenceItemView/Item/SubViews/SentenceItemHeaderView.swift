@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SentenceItemHeaderView: View {
 	
-	let sentence: SentenceModel
+	let sentence: SentenceModel_Generable
 	
     var body: some View {
 		Section {
@@ -54,6 +54,6 @@ struct SentenceItemHeaderView: View {
 
 #Preview {
 	Form {
-		SentenceItemHeaderView(sentence: SentenceModel.samples.first!)
+		SentenceItemHeaderView(sentence: SentenceModel_Generable.samples.first!)
 	}
 }

@@ -6,38 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SentencesMainView: View {
 	
-	@Namespace var namespace
-	@EnvironmentObject var sentenceViewModel: SentenceViewModel
-
-	@State private var isShowingSettingsView: Bool = false
+	@Environment(\.modelContext) private var modelContext
+	@Query private var sentences: [SentenceModel]
 
     var body: some View {
 		NavigationStack {
 			Form {
-				Button {
-					withAnimation {
-						sentenceViewModel.addInitialSentences(n5ProgrammingSentences)
-					}
-				} label: {
-					Text("Add default sentences")
+				ForEach(sentences) { sentence in
+					Text(sentence.generatedSentence.japanese)
 				}
-				
-				ForEach(sentenceViewModel.sentences, id: \.self) { sentence in
-					Text(sentence)
-				}
-				.onDelete(perform: sentenceViewModel.removeSentences)
+				.onDelete(perform: deleteSentence)
 
 				
-				Button {
-					withAnimation {
-						sentenceViewModel.deleteAllSentences()
-					}
-				} label: {
-					Text("Delete All")
-				}
 			}
 			.navigationTitle("Sentences")
 			.navigationBarTitleDisplayMode(.inline)
@@ -90,9 +74,15 @@ struct SentencesMainView: View {
 
 		}
     }
+	
+	private func deleteSentence(at offsets: IndexSet) {
+		for index in offsets {
+			let sentence = sentences[index]
+			modelContext.delete(sentence)
+		}
+	}
 }
 
 #Preview {
     SentencesMainView()
-		.environmentObject(SentenceViewModel())
 }

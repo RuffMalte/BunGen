@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct SentenceFormView: View {
-    var sentence: SentenceModel?
+    var sentence: SentenceModel_Generable?
     var answerWasCorrect: AISentenceResponse?
     var aiAnswerError: String?
     @Binding var selectedDifficulty: jlptLevelEnum
