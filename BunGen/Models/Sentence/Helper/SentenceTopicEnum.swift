@@ -10,7 +10,7 @@ import SwiftUI
 import FoundationModels
 
 @Generable
-enum SentenceTopicEnum: CaseIterable, Identifiable {
+enum SentenceTopicEnum: CaseIterable, Identifiable, Codable {
 	case programming
 	case travel
 	case hobby

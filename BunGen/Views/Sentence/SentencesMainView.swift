@@ -15,17 +15,34 @@ struct SentencesMainView: View {
 
     var body: some View {
 		NavigationStack {
-			Form {
-				ForEach(sentences) { sentence in
-					Text(sentence.generatedSentence.japanese)
+			if sentences.isEmpty {
+				ContentUnavailableView {
+					Label("No saved sentences yet", systemImage: "exclamationmark.bubble.fill")
+				} description: {
+					Text("Get started by pressing the button below.")
 				}
-				.onDelete(perform: deleteSentence)
 
-				
+			} else {
+				Form {
+					ForEach(sentences) { sentence in
+						NavigationLink {
+							Text(
+								sentence.dateAdded
+									.ISO8601Format(.iso8601WithTimeZone())
+							)
+						} label: {
+							SentenceListItemView(sentence: sentence)
+						}
+						
+					}
+					.onDelete(perform: deleteSentence)
+					
+					
+				}
+				.navigationTitle("Sentences")
+				.navigationBarTitleDisplayMode(.inline)
 			}
-			.navigationTitle("Sentences")
-			.navigationBarTitleDisplayMode(.inline)
-
+			
 //				ForEach(nLevel.allCases, id: \.self) { level in
 //					let sentencesForLevel = SentenceModel.samples.filter { $0.level == level }
 //					if !sentencesForLevel.isEmpty {

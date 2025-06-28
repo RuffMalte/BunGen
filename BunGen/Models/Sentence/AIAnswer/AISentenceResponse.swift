@@ -9,7 +9,7 @@ import SwiftUI
 import FoundationModels
 
 @Generable
-struct AISentenceResponse {
+struct AISentenceResponse: Codable {
 	var rating: AISentenceRating
 	
 	@Guide(description: "Your confidence in the answer")

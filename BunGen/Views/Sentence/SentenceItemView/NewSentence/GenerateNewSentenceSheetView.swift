@@ -116,13 +116,6 @@ struct GenerateNewSentenceSheetView: View {
 					print(newSentence.japanese)
 					isAnswering = false
 				}
-				
-				if let sentence {
-					let newSwiftDataModel = SentenceModel(
-						generatedSentence: sentence
-					)
-					modelContext.insert(newSwiftDataModel)
-				}
 			} catch let error as LanguageModelSession.GenerationError {
 				aiAnswerError = error.localizedDescription
 				print("generation error")
@@ -184,6 +177,17 @@ struct GenerateNewSentenceSheetView: View {
 				submittedAnswer = false
 				isAnswering = false
 			}
+		}
+		
+		if let sentence {
+			let newSwiftDataModel = SentenceModel(
+				generatedSentence: sentence
+			)
+			newSwiftDataModel.userInput = answer
+			newSwiftDataModel.aiAnswerForUserInput = answerWasCorrect
+			newSwiftDataModel.senteceTopic = selectedTopic
+			
+			modelContext.insert(newSwiftDataModel)
 		}
 	}
 

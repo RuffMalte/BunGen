@@ -8,7 +8,7 @@ import SwiftUI
 import FoundationModels
 
 @Generable
-enum AISentenceRating: String, CaseIterable {
+enum AISentenceRating: String, CaseIterable, Codable {
 	case good
 	case bad
 	case mixed

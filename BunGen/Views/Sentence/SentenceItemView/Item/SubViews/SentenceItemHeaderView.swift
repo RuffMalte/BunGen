@@ -36,15 +36,7 @@ struct SentenceItemHeaderView: View {
 			VStack {
 				HStack {
 					Spacer()
-					Text(sentence.level.rawValue)
-						.foregroundStyle(sentence.level.color.gradient)
-						.font(
-							.system(
-								.headline,
-								design: .rounded,
-								weight: .black
-							)
-						)
+					SentenceJLPTLevelView(jlptLevel: sentence.level)
 				}
 				Spacer()
 			}
