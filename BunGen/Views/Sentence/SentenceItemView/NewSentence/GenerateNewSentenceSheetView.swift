@@ -33,7 +33,7 @@ struct GenerateNewSentenceSheetView: View {
 			)
 			.navigationTitle("Generate New Sentence")
 			.toolbar {
-				MainToolbarView(
+				SentenceMainToolbarView(
 					sentence: $sentence,
 					answerWasCorrect: $answerWasCorrect,
 					answer: $answer,
@@ -51,7 +51,7 @@ struct GenerateNewSentenceSheetView: View {
 			self.answerWasCorrect = nil
 			aiAnswerError = nil
 			self.answer = ""
-			self.isAnswering = false // <-- Reset before view appears
+			self.isAnswering = true
 		}
 		let instructions: String = """
 		   You are a Japanese sentence generator. Your task is to create a single, natural, and grammatically correct Japanese sentence that matches the specified JLPT N-Level and topic.
@@ -80,7 +80,6 @@ struct GenerateNewSentenceSheetView: View {
 		   - Sentences JLPT-Level: \(selectedDifficulty.rawValue)
 		   """
 		
-		isAnswering = true
 		let session = LanguageModelSession(
 			tools: [
 				KnownGrammarStructuresTool(),

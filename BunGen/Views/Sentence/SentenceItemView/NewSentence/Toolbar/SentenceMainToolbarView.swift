@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct MainToolbarView: ToolbarContent {
+struct SentenceMainToolbarView: ToolbarContent {
 	@Binding var sentence: SentenceModel?
 	@Binding var answerWasCorrect: AISentenceResponse?
 	@Binding var answer: String
