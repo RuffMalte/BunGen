@@ -14,6 +14,6 @@ struct AIProgressView: View {
 			.font(.largeTitle)
 			.padding()
 			.foregroundStyle(.orange.gradient)
-			.symbolEffect(.bounce.up.byLayer, options: .repeat(.periodic(delay: 0.0)))
+			.symbolEffect(.rotate.byLayer, options: .repeat(.periodic(delay: 0.0)))
     }
 }

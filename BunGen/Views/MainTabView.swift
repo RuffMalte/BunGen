@@ -11,7 +11,7 @@ struct MainTabView: View {
 	
 	@State private var isShowingNewSentenceView: Bool = false
 	
-	@State private var selectedTab: MainTabs = .daily
+	@State private var selectedTab: MainTabs = .sentences
 	@State private var isShowingBottomAccessoryToggledSheetView: Bool = false
     var body: some View {
 		TabView(selection: $selectedTab) {
@@ -37,14 +37,17 @@ struct MainTabView: View {
 		}
 		.tabViewStyle(.sidebarAdaptable)
 		.sheet(isPresented: $isShowingBottomAccessoryToggledSheetView) {
-			switch selectedTab {
-			case .sentences:
-				ModifiySentenceView()
-			case .daily:
-				Text("Hello 2")
-			case .trainer:
-				Text("Hello 3")
+			Group {
+				switch selectedTab {
+				case .sentences:
+					GenerateNewSentenceSheetView()
+				case .daily:
+					Text("Hello 2")
+				case .trainer:
+					Text("Hello 3")
+				}
 			}
+			.presentationDragIndicator(.visible)
 		}
 		.tabBarMinimizeBehavior(.onScrollDown)
     }

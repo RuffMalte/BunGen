@@ -59,10 +59,6 @@ struct SentenceUserTextfieldView: View {
 		}
 		.padding(8)
     }
-	
-	func hideKeyboard() {
-		UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-	}
 }
 
 #Preview {
