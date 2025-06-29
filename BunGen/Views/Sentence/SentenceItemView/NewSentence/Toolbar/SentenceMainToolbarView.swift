@@ -17,17 +17,15 @@ struct SentenceMainToolbarView: ToolbarContent {
 	var body: some ToolbarContent {
 		Group {
 			if sentence == nil {
-				ToolbarItem(placement: .bottomBar) {
-					Spacer()
-				}
+				ToolbarSpacer(.flexible, placement: .bottomBar)
+
 				ToolbarItemGroup(placement: .bottomBar) {
 					GenerateButton(isAnswering: $isAnswering, action: generateSentence)
 				}
 			} else {
 				if answerWasCorrect != nil {
-					ToolbarItem(placement: .bottomBar) {
-						Spacer()
-					}
+					ToolbarSpacer(.flexible, placement: .bottomBar)
+					
 					ToolbarItem(placement: .bottomBar) {
 						Button(role: .confirm) {
 							withAnimation {
@@ -38,6 +36,15 @@ struct SentenceMainToolbarView: ToolbarContent {
 						}
 					}
 				} else {
+					ToolbarItem(placement: .primaryAction) {
+						Button(role: .confirm) {
+							withAnimation {
+								sentence = nil
+							}
+						} label: {
+							Image(systemName: "arrow.trianglehead.2.clockwise")
+						}
+					}
 					ToolbarItem(placement: .bottomBar) {
 						Button {
 							hideKeyboard()
@@ -46,18 +53,18 @@ struct SentenceMainToolbarView: ToolbarContent {
 								.labelStyle(.iconOnly)
 						}
 					}
-					ToolbarItem(placement: .bottomBar) {
-						Spacer()
-					}
+
+					ToolbarSpacer(.flexible, placement: .bottomBar)
+
 					ToolbarItem(placement: .bottomBar) {
 						TextField("Your Answer", text: $answer, axis: .vertical)
 							.lineLimit(1, reservesSpace: true)
 							.textFieldStyle(.plain)
 							.padding(.horizontal, 6)
 					}
-					ToolbarItem(placement: .bottomBar) {
-						Spacer()
-					}
+					
+					ToolbarSpacer(.flexible, placement: .bottomBar)
+
 					ToolbarItem(placement: .bottomBar) {
 						Button(role: .confirm) {
 							rateAnswer()

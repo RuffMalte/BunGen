@@ -15,6 +15,7 @@ struct GenerateNewSentenceSheetView: View {
 	
 	@State var selectedDifficulty: jlptLevelEnum = .N5
 	@State private var selectedTopic: SentenceTopicEnum = .programming
+	@State private var selectedSentenceLength: SentenceLengthEnum = .long
 	
 	@State private var aiAnswerError: String?
 	@State private var submittedAnswer: Bool = false
@@ -43,7 +44,8 @@ struct GenerateNewSentenceSheetView: View {
 				answerWasCorrect: answerWasCorrect,
 				aiAnswerError: aiAnswerError,
 				selectedDifficulty: $selectedDifficulty,
-				selectedTopic: $selectedTopic
+				selectedTopic: $selectedTopic,
+				selectedSentenceLength: $selectedSentenceLength
 			)
 			.navigationTitle("Generate New Sentence")
 			.toolbar {
@@ -67,34 +69,88 @@ struct GenerateNewSentenceSheetView: View {
 			self.answer = ""
 			self.isAnswering = true
 		}
+		print(latestItems.map { $0.generatedSentence.japanese }.joined(separator: "|"))
+		
 		let instructions: String = """
-			You are a Japanese sentence generator. Your task is to create a single, natural, and grammatically correct Japanese sentence that matches the specified JLPT N-Level and topic.
-			- Ensure the sentence is appropriate for the selected proficiency level (N5 = very simple, N1 = advanced).!!!
-			- Use vocabulary and grammar suitable for the level.
-			- The sentence must be relevant to the topic and easy to understand for learners at that level.
-			- Avoid using slang, archaic, or overly complex expressions unless appropriate for the level.
-			- Only use vocabulary that matches the selected JLPT level; avoid advanced vocabulary unless required by the level.
-			- For each new sentence, use a unique grammatical structure or vocabulary that differs from typical or previously generated sentences for the same topic and level.
-			- Avoid set phrases, textbook examples, or overly simple patterns if possible for the selected level.
-			- Vary the sentence length and complexity within the boundaries of the selected JLPT level.
-			- Imagine a new real-life situation or context each time you generate a sentence, and incorporate different names, places, or objects relevant to the topic to make each sentence unique.
-			- Do not generate sentences that are structurally or semantically similar to previous examples.
-			- Strive for originality and variety in both content and structure.
-			- You can use the tools available to you to genereated better responses, you shouls **ALWAYS** check if the grammar is in the known grammar of the user, the topic matches, if the senctence is already in the database (or anything similar) and also if you are using vocabulary that is known to the user. **ALWAYS** check this!
-			- NEVER CREATE ANYTHING INNAPROPRIATE! or other content that might not be seen as PG! Always try to create a family friendly answer! That can be apprichiated by all cultures and every human beeing without being offensive in any way. The content must not be unsafe in any way!!! **ALWAYS** ensure this!
-			- The following where the last generated Senteces, do not ever present these again or anything similar: \(         latestItems.map { $0.generatedSentence.japanese }.joined(separator: "\n"))
-			- Be creative when creating the sentence!!!
-			- ALso try to create sentences that are challeging to the users current JLPT level, and also dont create short sentences!
+		## Output Diversity & Originality
+
+		- **Absolute Ban on Repetition**:
+		  - Do NOT reuse any sentence structure, verb, location, or name from the last 30 outputs.
+		  - Do NOT copy or closely mimic any example or previous sentence, even with different words.
+		  - Never use placeholder text like [キャラクター名] or [UniquePlace]; always generate unique, realistic Japanese names and locations.
+		- **Creativity & Challenge**:
+		  - Every sentence must be a *mini-story* with a surprising or imaginative twist, suitable for the selected JLPT level.
+		  - Avoid textbook or template patterns.
+		  - Use unusual verbs, locations, and character actions that have not appeared recently.
+		- **Grammar & JLPT Level**:
+		  - Use only grammar, vocabulary, and conjugations appropriate for the specified JLPT level.
+		  - For higher levels (N3, N2, N1), avoid basic patterns like「[X]は[Y]が好きです」「[X]で[Y]をします」「[X]は[Y]で[Z]をしています」entirely.
+		  - Integrate advanced or less common grammar for N3+ (e.g., 〜ながら, 〜そう, passive, causative, 〜ば〜ほど, 〜ずにはいられない).
+		- **Structural & Demographic Variety**:
+		  - Rotate character demographics: child (くん/ちゃん), adult (さん), elder (おじいさん/おばあさん).
+		  - Vary sentence structure: SVO, SOV, use of conditionals, passives, causatives, and different verb forms.
+		  - Ensure at least three distinct sentence patterns for every five sentences.
+		- **Novelty Enforcement**:
+		  - Block any location-verb pair that matches any of the last 30 outputs.
+		  - Require sensory or emotional detail (e.g., smells, textures, feelings).
+		  - Vary temporal context (e.g., 明日の朝, 1999年, 雨の日).
+		  - Try to minimize the reuse of names.
+		- **Validation**:
+		  - Compare new output to \(latestItems.suffix(60).map { $0.generatedSentence.japanese }.joined(separator: "|")) and do create if any pattern, location, verb, or name is similar.
+		  - Dont create a sentence if the sentence is not fun, surprising, or feels repetitive.
+		  ## Output Diversity & Originality (Enhanced)
+		  
+		  - **Pattern Disruption Protocol**:
+		  - Enforce 3+ structural variants per 5 sentences (SOV, passive, causative, conditional)
+		  
+		  - **Lexical Innovation Engine**:
+		  - Ban top 10 most frequent verbs from history
+		  - Mandate location-action pairs with +70% novelty score
+		  - Require sensory vocabulary (e.g., ごつごつ, 芳しい) in 80% of outputs
+		  - Enforce demographic-context pairing:
+			| Demographic   | Context Requirement          |
+			|---------------|------------------------------|
+			| Child (くん)  | Imaginative/fantasy element  |
+			| Adult (さん)  | Professional/technical detail|
+			| Elder (様)    | Historical/traditional reference |
+		  
+		  - **Temporal Constraints**:
+		  - Rotate time periods: 60% present, 20% past, 20% future
+		  - Require time-specific vocabulary (e.g., 明け方, 真夜中)
+		  
+		  - **Validation Upgrade**:
+		  - Reject if verb conjugation pattern matches last 15 outputs
 		"""
 		
+		
+		
 		let prompt: String = """
-		   Please generate a Japanese sentence with these parameters:
-		   - JLPT Level: \(selectedDifficulty.rawValue)
-		   - Vocubuarly Level: \(selectedDifficulty.rawValue)
-		   - Topic: \(selectedTopic.name)
-		   - Sentences JLPT-Level: \(selectedDifficulty.rawValue)
-		   """
-		//TODO: Sentence Length picker
+		# Japanese Mini-Story Sentence Generation
+
+		## Parameters
+		- JLPT Level: \(selectedDifficulty.rawValue)
+		- Topic: \(selectedTopic.name)
+		- Length: \(selectedSentenceLength.title) (\(selectedSentenceLength.rangeInWords))
+		- Style: Creative, context-rich mini-story
+
+		## Output Rules
+		1. Strict word count: \(selectedSentenceLength.rangeInWords)
+		2. Required elements:
+		   - Unique, realistic Japanese character name (not used in last 15 outputs)
+		   - Fresh, unconventional location (not used in previous 20 sentences)
+		   - Action verb, conjugated appropriately for JLPT level, never repeated from last 20 outputs
+		   - Demographic rotation: child, adult, elder (cycle with each new sentence)
+		3. Banned patterns:
+		   - Never use: [X]は[Y]が好きです, [X]で[Y]をします, [X]は[Y]で[Z]をしています
+		   - Do not use any structure, verb, or location from recent outputs
+		4. Mandatory:
+		   - At least one advanced grammar/conjugation (e.g., honorifics, conditionals, passive, causative, 〜ながら, 〜そう, etc. as appropriate for JLPT level)
+		   - Sensory or emotional detail, or an unexpected consequence
+		   - Temporal context (e.g., time of day, year, weather)
+		5. Do not use placeholders or example text; always generate real content.
+		Generate a single, self-contained Japanese sentence that is original, fun, and challenging for the learner, following all above rules.
+		"""
+	
 		let session = LanguageModelSession(
 			tools: [
 				KnownGrammarStructuresTool(),

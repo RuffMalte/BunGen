@@ -12,7 +12,8 @@ struct SentenceFormView: View {
     var aiAnswerError: String?
     @Binding var selectedDifficulty: jlptLevelEnum
     @Binding var selectedTopic: SentenceTopicEnum
-    
+	@Binding var selectedSentenceLength: SentenceLengthEnum
+	
     var body: some View {
         Form {
             if let sentence {
@@ -24,6 +25,7 @@ struct SentenceFormView: View {
                 Section("Generation Options") {
                     NewSenteceDifficultyPicker(selectedDifficulty: $selectedDifficulty)
                     NewSentenceTopicPicker(selectedTopic: $selectedTopic)
+					NewSentenceLengthPicker(selectedSentenceLength: $selectedSentenceLength)
                 }
             }
             if let aiAnswerError {
